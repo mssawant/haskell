@@ -1,0 +1,62 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 9fe75a5a86b235c0bcdca76d2da237c2dacb8713f097f1396bc276d17b3e1e36
+
+name:           phone
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/mssawant/haskell/phone#readme>
+homepage:       https://github.com/mssawant/haskell/phone#readme
+bug-reports:    https://github.com/mssawant/haskell/phone/issues
+author:         Mandar Sawant
+maintainer:     Mandrix.com
+copyright:      2018 Mandar Sawant
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/mssawant/haskell/phone
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  exposed-modules:
+      Phone
+  other-modules:
+      Paths_phone
+  default-language: Haskell2010
+
+executable phone-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , phone
+  other-modules:
+      Paths_phone
+  default-language: Haskell2010
+
+test-suite phone-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , phone
+  other-modules:
+      Paths_phone
+  default-language: Haskell2010
